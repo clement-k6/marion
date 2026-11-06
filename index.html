@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marion Jerome | Freelance Data Annotator & Lingala Conversation Specialist</title>
+    <meta name="description" content="Native Lingala speaker specializing in AI conversation recording, speech data annotation, and high-quality documentation. Available for freelance work.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2c5282;
+            --accent: #c53030;
+            --accent-soft: #feb2b2;
+            --bg: #f7fafc;
+            --bg-card: #ffffff;
+            --text: #1a202c;
+            --text-muted: #4a5568;
+            --border: #e2e8f0;
+            --success: #276749;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        /* Header / Hero */
+        .hero {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #2b6cb0 100%);
+            color: white;
+            padding: 4rem 1.5rem 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 60%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .title {
+            font-size: 1.25rem;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-bar a {
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            opacity: 0.95;
+            transition: opacity 0.2s;
+        }
+
+        .contact-bar a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(4px);
+            padding: 0.35rem 0.9rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            margin-top: 1.25rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+            overflow-x: auto;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary);
+            background: #ebf4ff;
+        }
+
+        /* Sections */
+        section {
+            padding: 3.5rem 1.5rem;
+        }
+
+        section:nth-child(even) {
+            background: var(--bg-card);
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.85rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        /* About */
+        .about-text {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 720px;
+            line-height: 1.75;
+        }
+
+        .about-text strong {
+            color: var(--text);
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        section:nth-child(even) .skill-card {
+            background: var(--bg);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .skill-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: #ebf4ff;
+            color: var(--primary-light);
+            font-size: 0.82rem;
+            font-weight: 500;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            border: 1px solid #bee3f8;
+        }
+
+        .tag.accent {
+            background: #fff5f5;
+            color: var(--accent);
+            border-color: var(--accent-soft);
+        }
+
+        /* Experience */
+        .timeline {
+            position: relative;
+            margin-top: 1.5rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .exp-item {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 2.25rem;
+        }
+
+        .exp-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .exp-item::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 8px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+
+        .exp-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .exp-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text);
+        }
+
+        .exp-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            background: #edf2f7;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+        }
+
+        .exp-org {
+            font-size: 0.95rem;
+            color: var(--primary-light);
+            margin-bottom: 0.75rem;
+        }
+
+        .exp-item ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .exp-item li {
+            position: relative;
+            padding-left: 1.1rem;
+            margin-bottom: 0.45rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .exp-item li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 0.8rem;
+        }
+
+        /* Education */
+        .edu-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem 1.75rem;
+            margin-bottom: 1.25rem;
+            box-shadow: var(--shadow);
+        }
+
+        section:nth-child(even) .edu-card {
+            background: var(--bg);
+        }
+
+        .edu-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-degree {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .edu-school {
+            color: var(--primary-light);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Additional Info */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1rem;
+        }
+
+        .info-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.35rem;
+            box-shadow: var(--shadow);
+        }
+
+        section:nth-child(even) .info-card {
+            background: var(--bg);
+        }
+
+        .info-card h3 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .info-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: white;
+            text-align: center;
+            padding: 3.5rem 1.5rem;
+        }
+
+        .cta h2 {
+            color: white;
+            margin-bottom: 0.75rem;
+        }
+
+        .cta h2::after {
+            background: var(--accent-soft);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .cta p {
+            opacity: 0.9;
+            max-width: 500px;
+            margin: 0 auto 1.75rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: #f0f4f8;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+
+        .btn-outline:hover {
+            border-color: white;
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a202c;
+            color: #a0aec0;
+            text-align: center;
+            padding: 1.75rem;
+            font-size: 0.875rem;
+        }
+
+        footer a {
+            color: #cbd5e0;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero {
+                padding: 3rem 1.25rem 4rem;
+            }
+            section {
+                padding: 2.5rem 1.25rem;
+            }
+            .timeline::before {
+                left: 8px;
+            }
+            .exp-item {
+                padding-left: 2rem;
+            }
+            .exp-item::before {
+                left: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <header class="hero">
+        <div class="container hero-content">
+            <h1>Marion Jerome</h1>
+            <p class="title">Freelance Data Annotator & Lingala Conversation Specialist</p>
+            <div class="contact-bar">
+                <a href="mailto:marionjerom8@gmail.com">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.708 2.825L15 11.105V5.383zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741zM1 11.105l4.708-2.897L1 5.383v5.722z"/></svg>
+                    marionjerom8@gmail.com
+                </a>
+                <a href="tel:+254798787913">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/></svg>
+                    +254 798 787 913
+                </a>
+                <span style="display:inline-flex;align-items:center;gap:0.4rem;opacity:0.95;">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                    Nairobi, Kenya
+                </span>
+            </div>
+            <div class="badge">Native Lingala Speaker · Available Immediately</div>
+        </div>
+    </header>
+
+    <!-- Nav -->
+    <nav>
+        <div class="container">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
+            <a href="#availability">Availability</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- About -->
+    <section id="about">
+        <div class="container">
+            <h2>Professional Summary</h2>
+            <p class="about-text">
+                <strong>Native Lingala speaker</strong> with authentic everyday fluency and clear pronunciation, seeking freelance AI Conversation Recording Contributor roles. 
+                First-class Bachelor of Fashion graduate from Kenyatta University with proven attention to detail, ability to follow precise instructions, and strong organisational skills.
+                <br><br>
+                Experienced in natural spontaneous conversation, careful listening, and delivering accurate documentation. 
+                Comfortable working independently from a quiet home environment with reliable recording equipment and stable internet. 
+                <strong>Ready to start immediately</strong> on flexible task-based schedules.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <div class="container">
+            <h2>Key Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>
+                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M4.545 6.714 4.133 6H2v4h.286c.55 0 1.027-.26 1.27-.646l.194-.288a2.5 2.5 0 0 1 .543-.5l.194-.1a2.5 2.5 0 0 1 1.057-.2h.5a.5.5 0 0 0 0-1h-.5a1.5 1.5 0 0 0-.634.14l-.194.1a1.5 1.5 0 0 0-.326.3l-.194.288a.5.5 0 0 1-.424.218H3V7h.867l.412.714a.5.5 0 0 0 .866-.5zM8 5.5a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 1 0V6h1.5a.5.5 0 0 0 0-1H8zm3.5 0a.5.5 0 0 0 0 1H13v1.5a.5.5 0 0 0 1 0V6h1.5a.5.5 0 0 0 0-1h-4z"/></svg>
+                        Languages
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="tag accent">Native Lingala</span>
+                        <span class="tag">Advanced English</span>
+                        <span class="tag">Fluent Swahili</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>
+                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"/><path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z"/></svg>
+                        Core Competencies
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="tag">Spontaneous speech recording</span>
+                        <span class="tag">Speech data annotation</span>
+                        <span class="tag">Metadata accuracy</span>
+                        <span class="tag">Attention to detail</span>
+                        <span class="tag">Following detailed instructions</span>
+                        <span class="tag">Natural conversational flow</span>
+                        <span class="tag">High-quality documentation</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>
+                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5.5 7H8V6a1.5 1.5 0 0 1-1.5-1.5v-1zM8 1a2.5 2.5 0 0 0-2.5 2.5v1A2.5 2.5 0 0 0 8 7v1H5.5A1.5 1.5 0 0 0 4 9.5v1A1.5 1.5 0 0 0 5.5 12h5A1.5 1.5 0 0 0 12 10.5v-1A1.5 1.5 0 0 0 10.5 8H8V7a2.5 2.5 0 0 0 2.5-2.5v-1A2.5 2.5 0 0 0 8 1z"/></svg>
+                        Technical Setup
+                    </h3>
+                    <div class="skill-tags">
+                        <span class="tag">Quiet home recording space</span>
+                        <span class="tag">Headset with microphone</span>
+                        <span class="tag">Reliable high-speed internet</span>
+                        <span class="tag">Online recording platforms</span>
+                        <span class="tag">Basic audio quality checks</span>
+                        <span class="tag">Microsoft Office & Google Workspace</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+        <div class="container">
+            <h2>Relevant Experience</h2>
+            <div class="timeline">
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Freelance Lingala Conversation Partner</span>
+                        <span class="exp-date">Feb 2025 – Present</span>
+                    </div>
+                    <div class="exp-org">Remote</div>
+                    <ul>
+                        <li>Delivered 120+ hours of natural one-on-one and small-group conversations in Lingala with language learners and community members.</li>
+                        <li>Recorded clear audio using a quality headset in a quiet home environment and followed client guidelines for spontaneous, real-life speech.</li>
+                        <li>Provided accurate session notes and feedback, demonstrating consistency and attention to detail in documentation.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Fashion Design Project Assistant & Coordinator</span>
+                        <span class="exp-date">2023 – 2025</span>
+                    </div>
+                    <div class="exp-org">Kenyatta University & Freelance</div>
+                    <ul>
+                        <li>Managed detailed project briefs, measurements, and documentation for fashion collections, requiring high precision and strict adherence to guidelines.</li>
+                        <li>Coordinated team communication and client feedback sessions, strengthening skills in clear verbal interaction and structured information recording.</li>
+                        <li>Developed strong habits of quality checking, accurate metadata recording, and meeting tight deadlines under clear instructions.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Community Lingala Conversation Volunteer</span>
+                        <span class="exp-date">2022 – 2024</span>
+                    </div>
+                    <div class="exp-org">Nairobi</div>
+                    <ul>
+                        <li>Facilitated weekly spontaneous group discussions in Lingala covering everyday life topics (family, work, markets, social events).</li>
+                        <li>Encouraged natural speech patterns without dialect imitation and supported participants in maintaining authentic pronunciation.</li>
+                        <li>Maintained simple attendance and session records, building consistency in documentation and attention to detail.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="edu-card">
+                <div class="edu-header">
+                    <span class="edu-degree">Bachelor of Fashion Design (First Class Honours)</span>
+                    <span class="exp-date">2021 – 2025</span>
+                </div>
+                <div class="edu-school">Kenyatta University</div>
+                <p class="edu-desc">
+                    Graduated with First Class Honours. Developed exceptional attention to detail, precision in following complex project briefs, structured documentation, and high standards of quality control — highly transferable skills for speech data collection, annotation, and metadata accuracy.
+                    <br><br>
+                    <strong>Key strengths gained:</strong> visual and verbal communication, systematic record-keeping, meeting strict specifications, and independent project delivery.
+                </p>
+            </div>
+            <div class="edu-card">
+                <div class="edu-header">
+                    <span class="edu-degree">Kenya Certificate of Secondary Education (KCSE)</span>
+                    <span class="exp-date">2020</span>
+                </div>
+                <p class="edu-desc">
+                    Strong performance in English and languages, providing a solid foundation in written and spoken communication.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Availability -->
+    <section id="availability">
+        <div class="container">
+            <h2>Availability & Setup</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Availability</h3>
+                    <p>Immediate start<br>Flexible schedule<br>2–4 hours daily</p>
+                </div>
+                <div class="info-card">
+                    <h3>Equipment</h3>
+                    <p>Dedicated quiet room<br>Quality headset with microphone<br>Stable high-speed internet</p>
+                </div>
+                <div class="info-card">
+                    <h3>Work Status</h3>
+                    <p>Private individual<br>Independent contractor</p>
+                </div>
+                <div class="info-card">
+                    <h3>Key Strengths</h3>
+                    <p>Authentic native Lingala pronunciation<br>Natural spontaneous speech<br>First-class academic discipline<br>Precision in following guidelines</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Contact -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <h2>Let's Work Together</h2>
+            <p>Available for freelance AI conversation recording, speech data annotation, and Lingala language contribution projects. Ready to deliver high-quality, authentic speech data.</p>
+            <div class="cta-buttons">
+                <a href="mailto:marionjerom8@gmail.com" class="btn btn-primary">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.708 2.825L15 11.105V5.383zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741zM1 11.105l4.708-2.897L1 5.383v5.722z"/></svg>
+                    Email Me
+                </a>
+                <a href="tel:+254798787913" class="btn btn-outline">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/></svg>
+                    Call / WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Marion Jerome · Freelance Data Annotator · Nairobi, Kenya</p>
+        <p style="margin-top:0.5rem;"><a href="mailto:marionjerom8@gmail.com">marionjerom8@gmail.com</a> · +254 798 787 913</p>
+    </footer>
+
+    <script>
+        // Simple active nav highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
